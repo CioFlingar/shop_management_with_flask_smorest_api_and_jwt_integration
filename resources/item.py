@@ -1,4 +1,3 @@
-import uuid
 from flask_smorest  import abort, Blueprint
 from flask.views import MethodView
 from sqlalchemy.exc import SQLAlchemyError
@@ -22,6 +21,7 @@ class Items(MethodView):
         db.session.delete(item)
         db.session.commit()
         return {"message": "Item deleted."}
+
     @blp.arguments(ItemUpdateSchema)
     @blp.response(200, ItemSchema)
     def put(self, item_data, item_id):
@@ -34,8 +34,8 @@ class Items(MethodView):
 
         db.session.add(item)
         db.session.commit()
-        raise NotImplementedError("Updating an item is not implemented.")
 
+        return item
 
 
 @blp.route("/item")
