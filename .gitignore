@@ -172,3 +172,9 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Extra files for local develpment
+/.vscode/launch.json
+/test.py
+/test2.py
+/test3.py

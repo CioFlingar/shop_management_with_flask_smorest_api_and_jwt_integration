@@ -7,5 +7,5 @@ class ItemTags(db.Model):
 
     id: Mapped[int] = mapped_column(db.Integer, primary_key=True)
 
-    store_id: Mapped[int] = mapped_column(db.Integer, db.ForeignKey("stores.id"))
+    item_id: Mapped[int] = mapped_column(db.Integer, db.ForeignKey("items.id"))
     tag_id: Mapped[int] = mapped_column(db.Integer, db.ForeignKey("tags.id"))
