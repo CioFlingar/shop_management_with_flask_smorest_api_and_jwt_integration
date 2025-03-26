@@ -7,3 +7,4 @@ marshmallow~=3.26.1
 flask-jwt-extended
 passlib
 flask-migrate
+gunicorn
